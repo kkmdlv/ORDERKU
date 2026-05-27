@@ -90,19 +90,7 @@ textarea{
   resize:none;
 }
 
-.lokasi-box{
-  display:flex;
-  gap:8px;
-}
 
-#ambilLokasi{
-  width:90px;
-  border:none;
-  background:#5b0f16;
-  color:white;
-  border-radius:12px;
-  font-weight:bold;
-}
 
 .submit-btn{
   width:100%;
