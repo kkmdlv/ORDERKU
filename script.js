@@ -14,6 +14,11 @@ window.onload = () => {
   document.getElementById("wa").value =
     localStorage.getItem("wa") || "";
 
+  document.getElementById("alamat").value =
+    localStorage.getItem("alamat") || "";
+
+  ambilLokasi();
+
 };
 
 function ambilLokasi(){
