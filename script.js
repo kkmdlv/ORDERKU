@@ -45,11 +45,11 @@ function ambilLokasi(){
         // =========================
 
         // Koordinat pusat Subang Kota
-        const centerLat = -6.5717;
-        const centerLng = 107.7608;
+        const centerLat = -6.571008;
+const centerLng = 107.7569466;
 
         // radius area (KM)
-        const radius = 10;
+        const radius = 15;
 
         const distance =
         hitungJarak(
