@@ -35,58 +35,87 @@
 
     <form id="orderForm">
 
-      <div class="input-group">
-        <label>Nama Lengkap</label>
-        <input type="text" id="nama" required>
-      </div>
+  <div class="input-group">
+    <label>Nama Lengkap</label>
 
-      <div class="input-group">
-        <label>No WhatsApp</label>
-        <input type="tel" id="wa" required>
-      </div>
+    <input
+      type="text"
+      id="nama"
+      placeholder="Contoh: Budi Setiawan"
+      required
+    >
+  </div>
 
-      <div class="input-group">
-        <label>Alamat Lengkap</label>
-        <textarea id="alamat" required></textarea>
-      </div>
+  <div class="input-group">
+    <label>No WhatsApp</label>
 
-      <div class="input-group">
-  <label>Share Lokasi</label>
+    <input
+      type="tel"
+      id="wa"
+      placeholder="Contoh: 628123456789"
+      required
+    >
+  </div>
 
-  <input
-    type="text"
-    id="sharelok"
-    readonly
-    placeholder="Mengambil lokasi..."
-    required
-  >
+  <div class="input-group">
+    <label>Alamat Lengkap</label>
 
-  <small style="color:gray">
-    Aktifkan GPS untuk melanjutkan order
-  </small>
-</div>
+    <textarea
+      id="alamat"
+      placeholder="Contoh: Perum Griya Asri Blok A2 No 10"
+      required
+    ></textarea>
 
-      <div class="input-group">
-        <label>Pesanan</label>
-        <textarea id="pesanan" required></textarea>
-      </div>
+    <small style="color:gray">
+      Isi alamat lengkap agar driver mudah menemukan lokasi
+    </small>
+  </div>
 
-      <div class="input-group">
-        <label>Pembayaran</label>
+  <div class="input-group">
+    <label>Share Lokasi</label>
 
-        <select id="pembayaran" required>
-          <option value="">Pilih</option>
-          <option value="Cash">Cash</option>
-          <option value="Transfer">Transfer</option>
-        </select>
-      </div>
+    <input
+      type="text"
+      id="sharelok"
+      readonly
+      placeholder="Mengambil lokasi otomatis..."
+      required
+    >
 
-      <button type="submit" class="submit-btn">
-        KIRIM PESANAN
-      </button>
+    <small style="color:gray">
+      Aktifkan GPS untuk melanjutkan order
+    </small>
+  </div>
 
-    </form>
+  <div class="input-group">
+    <label>Pesanan</label>
 
+    <textarea
+      id="pesanan"
+      placeholder="Contoh: Ayam geprek 2, es teh 1"
+      required
+    ></textarea>
+
+    <small style="color:gray">
+      Tulis detail pesanan dengan jelas
+    </small>
+  </div>
+
+  <div class="input-group">
+    <label>Pembayaran</label>
+
+    <select id="pembayaran" required>
+      <option value="">Pilih Metode Pembayaran</option>
+      <option value="Cash">Cash</option>
+      <option value="Transfer">Transfer</option>
+    </select>
+  </div>
+
+  <button type="submit" class="submit-btn">
+    KIRIM PESANAN
+  </button>
+
+</form>
   </div>
 
 </div>
