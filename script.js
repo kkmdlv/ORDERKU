@@ -144,6 +144,7 @@ if(
   // SESSION
   localStorage.setItem("nama", data.nama);
   localStorage.setItem("wa", data.wa);
+  localStorage.setItem("alamat", data.alamat);
 
   // SAVE SHEET
   await fetch(SCRIPT_URL,{
