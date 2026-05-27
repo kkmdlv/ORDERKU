@@ -1,6 +1,6 @@
 const ADMIN_WA = "6281220774717";
 
-const SCRIPT_URL = "URL_WEB_APP_ANDA";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx52ODko-BZ5wf_NRosaG4rieYpQqVE3U5a0cBm14Lp8UhZd-HHSkEQitC2EB8Jyhqw/exec";
 
 const form = document.getElementById("orderForm");
 
