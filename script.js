@@ -121,17 +121,43 @@ function hitungJarak(lat1, lon1, lat2, lon2){
 
 
 // FORMAT NOMOR
-document.getElementById("wa")
-.addEventListener("input", function(){
+const waInput =
+document.getElementById("wa");
 
-  let value = this.value.replace(/\D/g,'');
+waInput.addEventListener("blur", function(){
 
+  let value =
+  this.value.replace(/\D/g,'');
+
+  // jika mulai 08
   if(value.startsWith("08")){
-    value = "628" + value.substring(2);
+
+    value =
+    "628" + value.substring(2);
+
   }
 
-  if(!value.startsWith("628")){
-    value = "628" + value.replace(/^0+/,'');
+  // jika mulai 8
+  else if(value.startsWith("8")){
+
+    value =
+    "62" + value;
+
+  }
+
+  // jika hanya 62
+  else if(value === "62"){
+
+    value = "";
+
+  }
+
+  // jika belum ada 62
+  else if(!value.startsWith("62")){
+
+    value =
+    "62" + value;
+
   }
 
   this.value = value;
