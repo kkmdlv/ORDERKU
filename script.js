@@ -16,6 +16,47 @@ window.onload = () => {
 
 };
 
+function ambilLokasi(){
+
+  const lokasiInput =
+  document.getElementById("sharelok");
+
+  if(navigator.geolocation){
+
+    navigator.geolocation.getCurrentPosition(
+
+      (pos)=>{
+
+        const lat = pos.coords.latitude;
+        const lng = pos.coords.longitude;
+
+        lokasiInput.value =
+        `https://maps.google.com/?q=${lat},${lng}`;
+
+      },
+
+      ()=>{
+
+        lokasiInput.value =
+        "Lokasi gagal diambil";
+
+        alert(
+          "Harap aktifkan izin lokasi agar bisa order."
+        );
+
+      }
+
+    );
+
+  } else {
+
+    lokasiInput.value =
+    "Geolocation tidak didukung";
+
+  }
+
+}
+
 
 // FORMAT NOMOR
 document.getElementById("wa")
@@ -37,32 +78,36 @@ document.getElementById("wa")
 
 
 // SHARELOK
-document.getElementById("ambilLokasi")
-.addEventListener("click", ()=>{
+window.onload = () => {
 
-  if(navigator.geolocation){
+  document.getElementById("nama").value =
+    localStorage.getItem("nama") || "";
 
-    navigator.geolocation.getCurrentPosition((pos)=>{
+  document.getElementById("wa").value =
+    localStorage.getItem("wa") || "";
 
-      const lat = pos.coords.latitude;
-      const lng = pos.coords.longitude;
+  // AUTO SHARELOK
+  ambilLokasi();
 
-      const maps =
-      `https://maps.google.com/?q=${lat},${lng}`;
-
-      document.getElementById("sharelok").value = maps;
-
-    });
-
-  }
-
-});
+};
 
 
 // SUBMIT
 form.addEventListener("submit", async (e)=>{
 
   e.preventDefault();
+
+  const lokasi =
+document.getElementById("sharelok").value;
+
+if(
+  lokasi === "" ||
+  lokasi.includes("gagal") ||
+  lokasi.includes("didukung")
+){
+  alert("Lokasi wajib diaktifkan");
+  return;
+}
 
   const btn = document.querySelector(".submit-btn");
 
