@@ -214,7 +214,7 @@ if(
 ? "\n⚠ CUSTOMER BERADA DILUAR AREA SUBANG KOTA\n"
 : "";
 
-const text = `*ORDER BARU*${warningArea}
+const text = `*KUKAMI ORDER*${warningArea}
 
 Nama : ${data.nama}
 WA : ${data.wa}
