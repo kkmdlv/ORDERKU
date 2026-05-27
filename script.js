@@ -1,3 +1,5 @@
+let luarArea = false;
+
 const ADMIN_WA = "6281220774717";
 
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx52ODko-BZ5wf_NRosaG4rieYpQqVE3U5a0cBm14Lp8UhZd-HHSkEQitC2EB8Jyhqw/exec";
@@ -38,6 +40,36 @@ function ambilLokasi(){
         lokasiInput.value =
         `https://maps.google.com/?q=${lat},${lng}`;
 
+        // =========================
+        // AREA SUBANG KOTA
+        // =========================
+
+        // Koordinat pusat Subang Kota
+        const centerLat = -6.5717;
+        const centerLng = 107.7608;
+
+        // radius area (KM)
+        const radius = 10;
+
+        const distance =
+        hitungJarak(
+          lat,
+          lng,
+          centerLat,
+          centerLng
+        );
+
+        // jika diluar area
+        if(distance > radius){
+
+          luarArea = true;
+
+          alert(
+            "Anda sedang berada diluar area Subang Kota.\nSilahkan lengkapi alamat dengan lengkap."
+          );
+
+        }
+
       },
 
       ()=>{
@@ -46,19 +78,44 @@ function ambilLokasi(){
         "Lokasi gagal diambil";
 
         alert(
-          "Harap aktifkan izin lokasi agar bisa order."
+          "Harap aktifkan izin lokasi."
         );
 
       }
 
     );
 
-  } else {
-
-    lokasiInput.value =
-    "Geolocation tidak didukung";
-
   }
+
+}
+
+function hitungJarak(lat1, lon1, lat2, lon2){
+
+  const R = 6371;
+
+  const dLat =
+  (lat2-lat1) * Math.PI / 180;
+
+  const dLon =
+  (lon2-lon1) * Math.PI / 180;
+
+  const a =
+    Math.sin(dLat/2) *
+    Math.sin(dLat/2) +
+
+    Math.cos(lat1 * Math.PI/180) *
+    Math.cos(lat2 * Math.PI/180) *
+
+    Math.sin(dLon/2) *
+    Math.sin(dLon/2);
+
+  const c =
+  2 * Math.atan2(
+    Math.sqrt(a),
+    Math.sqrt(1-a)
+  );
+
+  return R * c;
 
 }
 
@@ -153,7 +210,11 @@ if(
   });
 
   // WHATSAPP
-  const text = `*KUKAMI ORDER*
+  const warningArea = luarArea
+? "\n⚠ CUSTOMER BERADA DILUAR AREA SUBANG KOTA\n"
+: "";
+
+const text = `*ORDER BARU*${warningArea}
 
 Nama : ${data.nama}
 WA : ${data.wa}
