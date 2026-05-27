@@ -147,7 +147,7 @@ if(
   });
 
   // WHATSAPP
-  const text = `*ORDER BARU*
+  const text = `*KUKAMI ORDER*
 
 Nama : ${data.nama}
 WA : ${data.wa}
