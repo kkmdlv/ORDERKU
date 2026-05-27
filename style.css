@@ -1,0 +1,143 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body{
+  font-family: Arial, sans-serif;
+  background:#f4f4f4;
+  color:#222;
+}
+
+.app{
+  max-width:500px;
+  margin:auto;
+  min-height:100vh;
+  background:#f4f4f4;
+}
+
+/* HEADER */
+
+.header{
+  background:#5b0f16;
+  padding:20px;
+  color:white;
+  border-bottom-left-radius:25px;
+  border-bottom-right-radius:25px;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.header h1{
+  font-size:22px;
+}
+
+.header p{
+  font-size:13px;
+  opacity:0.9;
+  margin-top:4px;
+}
+
+.install-btn{
+  border:none;
+  background:white;
+  color:#5b0f16;
+  padding:10px 14px;
+  border-radius:10px;
+  font-size:13px;
+  font-weight:bold;
+}
+
+/* CARD */
+
+.card{
+  margin:15px;
+  background:white;
+  border-radius:18px;
+  padding:18px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+
+.input-group{
+  margin-bottom:16px;
+}
+
+label{
+  display:block;
+  margin-bottom:7px;
+  font-size:14px;
+  font-weight:bold;
+}
+
+input,
+textarea,
+select{
+  width:100%;
+  border:none;
+  background:#f2f2f2;
+  padding:14px;
+  border-radius:12px;
+  font-size:14px;
+  outline:none;
+}
+
+textarea{
+  min-height:80px;
+  resize:none;
+}
+
+.lokasi-box{
+  display:flex;
+  gap:8px;
+}
+
+#ambilLokasi{
+  width:90px;
+  border:none;
+  background:#5b0f16;
+  color:white;
+  border-radius:12px;
+  font-weight:bold;
+}
+
+.submit-btn{
+  width:100%;
+  border:none;
+  background:#5b0f16;
+  color:white;
+  padding:16px;
+  border-radius:14px;
+  font-size:15px;
+  font-weight:bold;
+  margin-top:10px;
+}
+
+/* LOW SPEC OPTIMIZE */
+
+button{
+  cursor:pointer;
+}
+
+img{
+  max-width:100%;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+@media(max-width:480px){
+
+  .header{
+    padding:18px;
+  }
+
+  .card{
+    margin:12px;
+  }
+
+}

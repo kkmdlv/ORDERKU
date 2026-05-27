@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>KUKAMI DELIVERY</title>
+
+  <meta name="theme-color" content="#5b0f16">
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="apple-touch-icon" href="icon-192.png">
+
+</head>
+<body>
+
+<div class="app">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div>
+      <h1>KUKAMI DELIVERY</h1>
+      <p>Pesan cepat langsung driver</p>
+    </div>
+
+    <button id="installBtn" class="install-btn">
+      Install App
+    </button>
+  </div>
+
+  <!-- CARD -->
+  <div class="card">
+
+    <form id="orderForm">
+
+      <div class="input-group">
+        <label>Nama Lengkap</label>
+        <input type="text" id="nama" required>
+      </div>
+
+      <div class="input-group">
+        <label>No WhatsApp</label>
+        <input type="tel" id="wa" required>
+      </div>
+
+      <div class="input-group">
+        <label>Alamat Lengkap</label>
+        <textarea id="alamat" required></textarea>
+      </div>
+
+      <div class="input-group">
+        <label>Share Lokasi</label>
+
+        <div class="lokasi-box">
+          <input type="text" id="sharelok" readonly>
+
+          <button type="button" id="ambilLokasi">
+            Ambil
+          </button>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label>Pesanan</label>
+        <textarea id="pesanan" required></textarea>
+      </div>
+
+      <div class="input-group">
+        <label>Pembayaran</label>
+
+        <select id="pembayaran" required>
+          <option value="">Pilih</option>
+          <option value="Cash">Cash</option>
+          <option value="Transfer">Transfer</option>
+        </select>
+      </div>
+
+      <button type="submit" class="submit-btn">
+        KIRIM PESANAN
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
