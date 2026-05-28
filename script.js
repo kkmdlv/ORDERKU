@@ -272,7 +272,7 @@ ${data.pembayaran}`;
 // =======================
 // PWA INSTALL
 // =======================
-/*
+
 let deferredPrompt;
 
 const installBtn =
@@ -308,7 +308,7 @@ installBtn.addEventListener("click", async ()=>{
   }
 
 });
-*/
+
 
 
 // SERVICE WORKER
