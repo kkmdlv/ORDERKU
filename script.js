@@ -260,7 +260,7 @@ ${data.pembayaran}`;
   const url =
   `https://wa.me/${ADMIN_WA}?text=${encodeURIComponent(text)}`;
 
-  window.open(url, "_blank");
+ window.location.href = url;
 
   btn.innerHTML = "KIRIM PESANAN";
   btn.disabled = false;
